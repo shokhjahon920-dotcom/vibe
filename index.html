@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VIBE.</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      VIBE.
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#vibes">Vibes</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <button class="admin-button" onclick="openLogin()">
+      Admin
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        YOUR SPACE. YOUR VIBE.
+      </p>
+
+      <h1>
+        Thoughts.<br>
+        <span>Vibes.</span><br>
+        Moments.
+      </h1>
+
+      <p class="hero-text">
+        A small place for thoughts, moments
+        and everything that feels like a vibe.
+      </p>
+
+      <a href="#vibes" class="explore-button">
+        Explore vibes ↓
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- VIBES -->
+
+  <section class="vibes-section" id="vibes">
+
+    <div class="section-header">
+
+      <div>
+        <p class="eyebrow">
+          RECENT POSTS
+        </p>
+
+        <h2>
+          Latest vibes
+        </h2>
+      </div>
+
+    </div>
+
+
+    <div class="posts" id="posts">
+
+      <!-- DEMO POST -->
+
+      <article class="post">
+
+        <div class="post-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba"
+            alt="Mountain vibe"
+          >
+
+        </div>
+
+
+        <div class="post-body">
+
+          <p class="post-text">
+            Sometimes you just need a quiet
+            evening and your own thoughts.
+          </p>
+
+
+          <div class="post-footer">
+
+            <span class="post-date">
+              VIBE • TODAY
+            </span>
+
+            <button
+              class="like-button"
+              onclick="likePost(this)"
+            >
+              ♡ <span>24</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- DEMO POST -->
+
+      <article class="post">
+
+        <div class="post-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+            alt="Nature vibe"
+          >
+
+        </div>
+
+
+        <div class="post-body">
+
+          <p class="post-text">
+            Some moments don't need words.
+          </p>
+
+
+          <div class="post-footer">
+
+            <span class="post-date">
+              VIBE • TODAY
+            </span>
+
+            <button
+              class="like-button"
+              onclick="likePost(this)"
+            >
+              ♡ <span>18</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- DEMO POST -->
+
+      <article class="post">
+
+        <div class="post-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+            alt="Forest vibe"
+          >
+
+        </div>
+
+
+        <div class="post-body">
+
+          <p class="post-text">
+            Collect moments, not things.
+          </p>
+
+
+          <div class="post-footer">
+
+            <span class="post-date">
+              VIBE • TODAY
+            </span>
+
+            <button
+              class="like-button"
+              onclick="likePost(this)"
+            >
+              ♡ <span>31</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <p class="eyebrow">
+      ABOUT VIBE.
+    </p>
+
+    <h2>
+      A place for the things
+      that feel like you.
+    </h2>
+
+    <p>
+      Thoughts, pictures, moments and vibes.
+      Nothing complicated.
+    </p>
+
+  </section>
+
+
+  <!-- ADMIN LOGIN -->
+
+  <div class="modal" id="loginModal">
+
+    <div class="modal-box">
+
+      <button
+        class="close-button"
+        onclick="closeLogin()"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        PRIVATE AREA
+      </p>
+
+      <h2>
+        Admin Login
+      </h2>
+
+      <p>
+        Only the owner can create posts.
+      </p>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+      >
+
+      <button
+        class="primary-button"
+        onclick="login()"
+      >
+        Login
+      </button>
+
+      <p
+        class="error"
+        id="loginError"
+      ></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ADMIN PANEL -->
+
+  <div class="modal" id="adminModal">
+
+    <div class="modal-box">
+
+      <button
+        class="close-button"
+        onclick="closeAdmin()"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        ADMIN
+      </p>
+
+      <h2>
+        Create a vibe
+      </h2>
+
+     <input
+  type="file"
+  id="imageFile"
+  accept="image/*"
+>
+      >
+
+      <textarea
+        id="caption"
+        placeholder="Write your thought..."
+      ></textarea>
+
+      <button
+        class="primary-button"
+        onclick="addPost()"
+      >
+        Publish
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="logo">
+      VIBE.
+    </div>
+
+    <p>
+      Your space. Your vibe.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
